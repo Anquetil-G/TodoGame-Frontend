@@ -1,0 +1,121 @@
+#todoPart {
+  background: #FFF;
+  border-radius: 5px;
+  padding: 13px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 950px) {
+  #todoPart {
+    height: auto;
+    min-height: 500px;
+  }
+}
+
+/* ---------------------------------- TITLE --------------------------------- */
+
+#todoPart .titleTodoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#todoPart .titleTodo {
+  font-size: 24px;
+}
+
+/* ---------------------------------- TASK ---------------------------------- */
+
+#todoPart .tasksContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow-y: scroll;
+  height: calc(100vh - 170px);
+}
+@media screen and (max-width: 950px) {
+  #todoPart .tasksContainer {
+    height: 100%;
+  }
+}
+#todoPart .tasksContainer #noTaskText {
+  margin-top: 17px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #424246;
+}
+#todoPart .tasksContainer::-webkit-scrollbar {
+  width: 0;
+}
+#todoPart .taskContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+#todoPart .taskContainer .leftSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#todoPart input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+}
+#todoPart input::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 100px;
+  transition: 0.2s;
+}
+#todoPart input:hover::after {
+  box-shadow: 0px 0px 0px 3px #5636d8b5;
+}
+#todoPart .taskName {
+  font-size: 18px;
+}
+#todoPart .taskDate {
+  font-size: 12px;
+  color: #379455;
+}
+#todoPart .taskContainer .rightSection .project {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#todoPart .projectName {
+  font-size: 12px;
+  color: #3D3D3D;
+}
+#todoPart .projectIcon {
+  font-size: 15px;
+  color: #424246;
+}
+#todoPart .lineSeparation {
+  margin: 4px 0 0;
+}
+
+/* --------------------------------- BUTTON --------------------------------- */
+
+#todoPart .bottomSection button {
+  width: 100%;
+}
+@media screen and (max-width: 950px) {
+  #todoPart .bottomSection {
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,85 @@
+#shopPart {
+  background: #FFF;
+  border-radius: 5px;
+  padding: 13px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ---------------------------------- TITLE --------------------------------- */
+
+#shopPart .titleShopContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------------------------------- ITEMS --------------------------------- */
+
+#shopPart .itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow-y: scroll;
+}
+#shopPart .itemsContainer::-webkit-scrollbar {
+  width: 0;
+}
+#shopPart .itemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+#shopPart .itemContainer .leftSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#shopPart .itemDescription {
+  color: #5F5F5F;
+}
+#shopPart .itemContainer .rightSection .priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+#shopPart .price {
+  color: #3D3D3D;
+}
+
+/* ---------------------------------- ICONS --------------------------------- */
+
+#shopPart .itemIcon1 {
+  width: 39px;
+  height: 39px;
+  background: url("../assets/icons/itemIcon-potion.png") center/cover;
+}
+#shopPart .itemIcon2 {
+  width: 39px;
+  height: 39px;
+  background: url("../assets/icons/itemIcon-FatPotion.png") center/cover;
+}
+#shopPart .itemIcon3 {
+  width: 39px;
+  height: 39px;
+  background: url("../assets/icons/ItemIcon-spear.png") center/cover;
+}
+#shopPart .itemIcon4 {
+  width: 39px;
+  height: 39px;
+  background: url("../assets/icons/ItemIcon-sword.png") center/cover;
+}
+#shopPart .itemIcon5 {
+  width: 39px;
+  height: 39px;
+  background: url("../assets/icons/ItemIcon-armor.png") center/cover;
+}
+#shopPart .itemIcon6 {
+  width: 39px;
+  height: 39px;
+  background: url("../assets/icons/ItemIcon-treasure.png") center/cover;
+}

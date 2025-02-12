@@ -1,0 +1,53 @@
+#monsterStatPart {
+  background: #FFF;
+  border-radius: 5px;
+  padding: 13px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ---------------------------------- TITLE --------------------------------- */
+
+#monsterStatPart .titleMonsterStatContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#monsterStatPart .typeOfMonster {
+  color: #2B7BD5;
+}
+
+/* ----------------------------- STAT CONTAINER ----------------------------- */
+
+#monsterStatPart .monsterStatContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#monsterStatPart .monsterStatContainer .rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+#monsterStatPart .monsterIcon {
+  width: 125px;
+  height: 125px;
+  background-position: center;
+  background-size: cover;
+}
+#monsterStatPart .iconDamage {
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+  background: #C83C3C;
+}
+#monsterStatPart .monsterHealthBarProgression {
+  width: 40%;
+  height: 100%;
+  background: #27C263;
+  border-radius: 100px;
+  transition: 0.5s;
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+  <link rel="shortcut icon" href="./assets/icons/Logo_Web.png"/>
+  <link rel="stylesheet" href="./style/_index.css">
+</head>
+<body>
+  
+
+  <div id="popup" class="closePopup">
+    <div class="popupContent">
+
+    </div>
+  </div>
+
+  <!-- <div id="unlockMonster">
+    <div class="unlockMonsterContent">
+      <div class="burst"></div>
+      <div class="monsterIcon"></div>
+    </div>
+  </div> -->
+
+
+
+  <div id="todoPart">
+    <div class="topSection">
+      <div class="titleTodoContainer">
+        <div class="sortIconContainer hoverType1">
+          <div class="sortIcon"></div>
+        </div>
+        <div class="titleTodo textTitle"><h1>Tâches en cours</h1></div>
+      </div>
+      <div class="tasksContainer" id="injectTasks">
+        <div class="lineSeparation"></div>
+      </div>
+    </div>
+    <div class="bottomSection">
+      <button class="buttonType1 textS2" id="buttonAddTask">Ajouter une tâche</button>
+    </div>
+  </div>
+
+  <div class="userStatAndShopContainer">
+    <div id="userStatPart">
+      <div class="topSection">
+        <div class="titleUserStatContainer">
+          <div class="titleUserStat textTitle"><h1>Statistiques</h1></div>
+        </div>
+      </div>
+      <div class="middleSection">
+        <div class="progressionBarContainer">
+          <div class="healthBarContainer statBarContainer">
+            <div class="healthBarTitleContainer statBarTitle">
+              <div class="currentHealth currentValue"><p id="injectHealth" class="textS2">100/100</p></div>
+              <div class="pointSeparation"></div>
+              <div class="healthBarTitle barTitle"><p class="textS2">Santé</p></div>
+            </div>
+            <div class="healthBar statBar">
+              <div class="healthBarProgression statBarProgression" id="injectHealthProgression"></div>
+            </div>
+          </div>
+          <div class="levelBarContainer statBarContainer">
+            <div class="levelBarTitleContainer statBarTitle">
+              <div class="currentLevel currentValue"><p id="injectLevel" class="textS2"></p></div>
+              <div class="pointSeparation"></div>
+              <div class="levelBarTitle barTitle"><p class="textS2">Niveau</p></div>
+            </div>
+            <div class="levelBar statBar">
+              <div class="levelBarProgression statBarProgression" id="injectLevelProgression"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottomSection">
+        <div class="coinsAndArmorsStat">
+          <div class="coinsStatContainer textStatContainer">
+            <div class="titleCoinsStat textStatTitle"><p class="textS2">Pièces : </p></div>
+            <div class="currentNumberOfCoins currentValue"><p id="injectCoins" class="textS2">0</p></div>
+            <div class="iconCoins"></div>
+          </div>
+          <div class="armorsStatContainer textStatContainer">
+            <div class="titleArmosrStat textStatTitle"><p class="textS2">Armures restantes : </p></div>
+            <div class="currentNumberOfArmors currentValue"><p id="injectArmors" class="textS2">0</p></div>
+            <div class="iconArmor"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="shopPart">
+      <div class="titleShopContainer">
+        <div class="sortIconContainer hoverType1">
+          <div class="sortIcon"></div>
+        </div>
+        <div class="titleShop"><h1 class="textTitle">Équipement</h1></div>
+      </div>
+      <div class="itemsContainer">
+        <div class="lineSeparation"></div>
+        <div class="itemContainer hoverType1" id="item1">
+          <div class="leftSection">
+            <div class="itemIcon itemIcon1"></div>
+            <div class="item">
+              <div class="itemName"><p class="textS1">Potion de vie</p></div>
+              <div class="itemDescription"><p class="textS3">Soigne de 20 PV</p></div>
+            </div>
+          </div>
+          <div class="rightSection">
+            <div class="priceContainer">
+              <div class="price"><p class="textS3">20</p></div>
+              <div class="iconCoins"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lineSeparation"></div>
+        <div class="itemContainer hoverType1" id="item2">
+          <div class="leftSection">
+            <div class="itemIcon itemIcon2"></div>
+            <div class="item">
+              <div class="itemName"><p class="textS1">Grosse potion de vie</p></div>
+              <div class="itemDescription"><p class="textS3">Soigne de 80 PV</p></div>
+            </div>
+          </div>
+          <div class="rightSection">
+            <div class="priceContainer">
+              <div class="price"><p class="textS3">100</p></div>
+              <div class="iconCoins"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lineSeparation"></div>
+        <div class="itemContainer hoverType1" itemid="3">
+          <div class="leftSection">
+            <div class="itemIcon itemIcon3"></div>
+            <div class="item">
+              <div class="itemName"><p class="textS1">Lance de combat</p></div>
+              <div class="itemDescription"><p class="textS3">Inflige 20 dégats</p></div>
+            </div>
+          </div>
+          <div class="rightSection">
+            <div class="priceContainer">
+              <div class="price"><p class="textS3">30</p></div>
+              <div class="iconCoins"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lineSeparation"></div>
+        <div class="itemContainer hoverType1" itemid="4">
+          <div class="leftSection">
+            <div class="itemIcon itemIcon4"></div>
+            <div class="item">
+              <div class="itemName"><p class="textS1">Épée de combat</p></div>
+              <div class="itemDescription"><p class="textS3">Inflige 50 dégats</p></div>
+            </div>
+          </div>
+          <div class="rightSection">
+            <div class="priceContainer">
+              <div class="price"><p class="textS3">60</p></div>
+              <div class="iconCoins"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lineSeparation"></div>
+        <div class="itemContainer hoverType1" id="item5">
+          <div class="leftSection">
+            <div class="itemIcon itemIcon5"></div>
+            <div class="item">
+              <div class="itemName"><p class="textS1">Armure</p></div>
+              <div class="itemDescription"><p class="textS3">Encaisse 50% de la prochaine attaque</p></div>
+            </div>
+          </div>
+          <div class="rightSection">
+            <div class="priceContainer">
+              <div class="price"><p class="textS3">60</p></div>
+              <div class="iconCoins"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lineSeparation"></div>
+        <!-- <div class="itemContainer hoverType1" id="item6">
+          <div class="leftSection">
+            <div class="itemIcon itemIcon6"></div>
+            <div class="item">
+              <div class="itemName"><p class="textS1">Coffre</p></div>
+              <div class="itemDescription"><p class="textS3">Donne un objet aléatoire</p></div>
+            </div>
+          </div>
+          <div class="rightSection">
+            <div class="priceContainer">
+              <div class="price"><p class="textS3">30</p></div>
+              <div class="iconCoins"></div>
+            </div>
+          </div>
+        </div>
+        <div class="lineSeparation"></div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="monsterStatAndCollectionContainer">
+    <div id="monsterStatPart">
+      <div class="titleMonsterStatContainer">
+        <div class="titleMonsterStat"><h1 class="textTitle">Créature</h1></div>
+        <div class="typeOfMonster"><p id="injectTypeOfMonster" class="textS1"></p></div>
+      </div>
+      <div class="monsterStatContainer">
+        <div class="leftSection">
+          <div class="monsterIcon" id="injectCurrentMonsterImage"></div>
+        </div>
+        <div class="rightSection">
+          <div class="monsterHealthBarContainer statBarContainer">
+            <div class="monsterHealthBarTitleContainer statBarTitle">
+              <div class="currentMonsterHealth currentValue"><p class="textS2"><span id="injectMonsterCurrentHealth"></span>/<span id="injectMonsterHealth"></span></p></div>
+              <div class="pointSeparation"></div>
+              <div class="monsterHealthBarTitle barTitle"><p class="textS2">Santé</p></div>
+            </div>
+            <div class="monsterHealthBar statBar">
+              <div class="monsterHealthBarProgression statBarProgression" id="injectMonsterHealthProgression"></div>
+            </div>
+          </div>
+          <div class="damageStatContainer textStatContainer">
+            <div class="titleDamageStat textStatTitle"><p class="textS2">Points d'attaque : </p></div>
+            <div class="currentNumberOfDamage currentValue"><p id="injectDamage" class="textS2">10</p></div>
+            <div class="iconDamage"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="collectionPart">
+      <div class="titleCollectionContainer">
+        <div class="titleCollection"><h1 class="textTitle">Collection de créatures</h1></div>
+      </div>
+      <div class="collectionSectionContainer">
+        <div class="communSection collectionSection">
+          <div class="titleSection"><p class="textS1">Commun</p></div>
+          <div class="monstersContainer">
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+          </div>
+        </div>
+        <div class="rareSection collectionSection">
+          <div class="titleSection"><p class="textS1">Rare</p></div>
+          <div class="monstersContainer">
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+          </div>
+        </div>
+        <div class="legendarySection collectionSection">
+          <div class="titleSection"><p class="textS1">Légendaire</p></div>
+          <div class="monstersContainer">
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+            <div class="monsterContainer">
+              <div class="monsterIcon"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./javascript/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

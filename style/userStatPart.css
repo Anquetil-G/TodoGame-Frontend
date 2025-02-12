@@ -1,0 +1,45 @@
+#userStatPart {
+  background: #FFF;
+  border-radius: 5px;
+  padding: 13px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ----------------------------- PROGRESSION BAR ---------------------------- */
+
+#userStatPart .progressionBarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#userStatPart .statBar .statBarProgression {
+  height: 100%;
+  border-radius: 100px;
+}
+#userStatPart .statBar .levelBarProgression {
+  width: 0%;
+  background: #5736D8;
+  transition: 0.5s;
+}
+#userStatPart .statBar .healthBarProgression {
+  width: 100%;
+  background: #C83C3C;
+  transition: 0.5s;
+}
+
+/* --------------------------- COINS & ARMORS STAT -------------------------- */
+
+#userStatPart .coinsAndArmorsStat {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#userStatPart .textStatContainer .iconArmor {
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+  background: #2B7BD5;
+}
