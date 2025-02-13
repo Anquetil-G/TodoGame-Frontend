@@ -11,7 +11,7 @@ const editCurrentMonster = async (res) => {
 	const body = {
 		currentMonster: futureMonster
 	}
-	await axios.put(`http://localhost:5000/user/editCurrentMonster/${res.data._id}`, body)
+	await axios.put(`https://todogame-backend.onrender.com/user/editCurrentMonster/${res.data._id}`, body)
 	window.location.href = "./index.html";
 }
 
@@ -21,7 +21,7 @@ loginForm.addEventListener("submit", async (e) => {
     email: e.target[0].value,
     password: e.target[1].value,
 	};
-	axios.post("http://localhost:5000/user/", body)
+	axios.post("https://todogame-backend.onrender.com/user/", body)
 		.then((res) => {
 			localStorage.setItem("email_ToDoListApp_8435976127", res.data.email);
 			localStorage.setItem("password_ToDoListApp_8435976127", res.data.password);

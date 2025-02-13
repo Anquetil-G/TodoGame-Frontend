@@ -192,7 +192,7 @@ let tasksData = [];
 let userData = [];
 
 const getData = async (tasks, userStat, monster, monsterCollection) => {
-  const res = await axios.get(`http://localhost:5000/user/getUser/${_id}`);
+  const res = await axios.get(`https://todogame-backend.onrender.com/user/getUser/${_id}`);
   tasksData = res.data.tasks;
   userData = res.data;
   userDie();
@@ -344,7 +344,7 @@ const addOneTask = () => {
           projectColor: selectedRadio.value
         }
         tasksData.push(taskData);
-        await axios.put(`http://localhost:5000/user/editTasks/${_id}`, {tasks: tasksData})
+        await axios.put(`https://todogame-backend.onrender.com/user/editTasks/${_id}`, {tasks: tasksData})
         await getData(true, false, false, false);
         openOneTask();
         checkConnexion();
@@ -396,7 +396,7 @@ const deleteOneTask = () => {
     const radio = Array.from(radiosOnTask)[i];
     radio.addEventListener("click", async () => {
       radio.closest(".taskAndLineContainer").remove();
-      await axios.delete(`http://localhost:5000/user/deleteOneTask/${_id}?taskId=${tasksData[i]._id}`);
+      await axios.delete(`https://todogame-backend.onrender.com/user/deleteOneTask/${_id}?taskId=${tasksData[i]._id}`);
       await getData(true, true, false, false);
       checkConnexion();
     });
@@ -421,7 +421,7 @@ const buyItem = () => {
           futureMonster = (2*11) + Math.floor(Math.random() * 11) + 1;
         };
         const itemId = i + 1;
-        await axios.put(`http://localhost:5000/user/buyItem/${_id}?itemId=${itemId}&futureMonsterHealth=${monstersData[futureMonster - 1].health}&futureMonster=${futureMonster}&futureMonsterDamage=${monstersData[futureMonster - 1].attack}&monsterDamage=${monstersData[userData.currentMonster - 1].attack}`).catch((err) => alert(err.response.data.message));
+        await axios.put(`https://todogame-backend.onrender.com/user/buyItem/${_id}?itemId=${itemId}&futureMonsterHealth=${monstersData[futureMonster - 1].health}&futureMonster=${futureMonster}&futureMonsterDamage=${monstersData[futureMonster - 1].attack}&monsterDamage=${monstersData[userData.currentMonster - 1].attack}`).catch((err) => alert(err.response.data.message));
         await getData(false, true, true, true);
         checkConnexion();        
         shopDisabled = false;
@@ -436,7 +436,7 @@ const checkConnexion = async () => {
   const password = localStorage.getItem("password_ToDoListApp_8435976127");
   const encodedEmail = encodeURIComponent(email);
   const encodedPassword = encodeURIComponent(password);  
-  axios.get(`http://localhost:5000/user/checkAccount?email=${encodedEmail}&password=${encodedPassword}`)
+  axios.get(`https://todogame-backend.onrender.com/user/checkAccount?email=${encodedEmail}&password=${encodedPassword}`)
   .then((res) => {
     if (res.status !== 200) {
       localStorage.clear()
@@ -462,7 +462,7 @@ const userDie = async () => {
     } else {
       futureMonster = (2*11) + Math.floor(Math.random() * 11) + 1;
     };
-    await axios.put(`http://localhost:5000/user/userDie/${_id}?updatedMonsterHealth=${monstersData[futureMonster - 1].health}&updatedMonster=${futureMonster}&updatedMonsterDamage=${monstersData[futureMonster - 1].attack}&updatedlifePoint=${100}&updatedCoins=${0}&updatedArmors=${0}`);
+    await axios.put(`https://todogame-backend.onrender.com/user/userDie/${_id}?updatedMonsterHealth=${monstersData[futureMonster - 1].health}&updatedMonster=${futureMonster}&updatedMonsterDamage=${monstersData[futureMonster - 1].attack}&updatedlifePoint=${100}&updatedCoins=${0}&updatedArmors=${0}`);
     popupContent = document.querySelector("#popup .popupContent")
     popupContent.innerHTML = `
       <div class="popupCloseContainer">
